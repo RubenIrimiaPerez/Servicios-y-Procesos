@@ -6,7 +6,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		int CantidadCoche = 10; // Cantidad de pilotos en la carrera
-		int CochesCompletados =0;
+		int CochesCompletados = 0;
 		Coche[] coches = new Coche[CantidadCoche];
 
 		// Inicializar los coches y comenzar la carrera
@@ -14,6 +14,12 @@ public class Main {
 			coches[i] = new Coche("Coche" + (i + 1));
 			coches[i].start();
 		}
+		
+		
+		
+		
+		
+		
 		do {
 			// Simular la carrera durante 10 vueltas
 			for (int vuelta = 0; vuelta <= 10; vuelta++) {
@@ -22,7 +28,7 @@ public class Main {
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
-				
+
 				// Ordenar los coches según las vueltas completadas y mostrar el estado
 				ordenarCoches(coches);
 				System.out.println("Coche   Vuelta     Ranking");
@@ -30,16 +36,32 @@ public class Main {
 				for (int i = 0; i < CantidadCoche; i++) {
 					Coche coche = coches[i];
 					System.out.println(coche.getNombre() + "       " + coche.getVueltas() + "        " + (i + 1));
+
 				}
 				System.out.println("\n");
-				
-				
-			}
-			CochesCompletados++;
-		
-		}while(CochesCompletados<10);
-		
 
+			}
+		
+			CochesCompletados++;
+		} while (contarVueltas(coches) == true);
+
+	}
+	
+
+	public static boolean contarVueltas(Coche[] coches) {
+		
+		for (Coche coche : coches) {
+			
+			if(coche.getVueltas() <10) {
+				return true;
+			}
+			
+		}
+		
+		return false;
+		
+		
+		
 	}
 
 	private static void ordenarCoches(Coche[] coches) {
@@ -50,12 +72,11 @@ public class Main {
 					coches[j] = coches[j + 1];
 					coches[j + 1] = temp;
 				}
+
 			}
+
 		}
-	}	
-	
-		
+
 	}
 
-
-
+}
