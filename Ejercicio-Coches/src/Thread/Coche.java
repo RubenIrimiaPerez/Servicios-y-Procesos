@@ -25,9 +25,9 @@ public class Coche extends Thread {
 		Random random = new Random();
 		for (int vuelta = 1; vuelta <= 10; vuelta++) {
 			try {
-				int tiempoVuelta = random.nextInt(500,3000); // Tiempo aleatorio entre 0.5 y 3 segundos 
+				int segVuelta = random.nextInt(500,3000); // Tiempo aleatorio entre 0.5 y 3 segundos que dura cada vuelta
 				vueltas++;
-				Thread.sleep(tiempoVuelta);
+				Thread.sleep(segVuelta);//el tiempo que tarda en hacer la vuelta el hilo no hace nada esta dormido
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
