@@ -12,7 +12,7 @@ public class Main {
 	        System.out.print("Introduce una cadena: ");
 	        String cadena = scanner.nextLine();
 
-	        // Crear un arreglo de hilos para cada carácter
+	        // Crear un array de hilos para cada carácter
 	        ContadorCaracteres[] hilos = new ContadorCaracteres[cadena.length()];
 
 	        // Iniciar un hilo para cada carácter en la cadena

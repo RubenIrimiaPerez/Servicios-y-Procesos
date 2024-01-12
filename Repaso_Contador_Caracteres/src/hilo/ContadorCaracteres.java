@@ -28,7 +28,7 @@ public class ContadorCaracteres extends Thread{
 
 	    // Método run, que se ejecuta cuando se inicia el hilo
 	    @Override
-	    public void run() {
+	    public synchronized  void run() {
 	        // Recorre el carácter y verifica su tipo
 	        for (int i = 0; i < cadena.length(); i++) {
 	            char caracter = cadena.charAt(i);

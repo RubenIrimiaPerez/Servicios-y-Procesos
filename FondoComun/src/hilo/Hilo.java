@@ -18,7 +18,7 @@ public class Hilo extends Thread {
 	private List<Integer> traza = Collections.synchronizedList(new ArrayList<>());
 	
 	// Método que se ejecuta cuando se inicia el hilo
-    public void run() {
+    public  synchronized void run() {
         int ingreso = (int) (Math.random() * 101) + 100; // Generar un número aleatorio entre 100 y 200
         traza.add(ingreso);
         FondoComun.agregarDinero(ingreso); // Actualizar el fondo común con el ingreso del usuario
